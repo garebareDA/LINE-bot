@@ -24,7 +24,7 @@ function handleEvent(event) {
   let replyText = '';
 
   switch(event.message.text){
-    case 'こんにちは':
+    case String(event.message.text.match(/こんにちは.*/)):
     case 'すらまっぱぎー':
     case 'お休みぃぃぃぃ':
     case 'にっこにっこにー':
