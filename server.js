@@ -22,17 +22,21 @@ function handleEvent(event) {
     return Promise.resolve( null);
   }
   let replyText = '';
-  if (event.message.text === 'こんにちは'){
+
+  switch(event.message.text){
+    case 'こんにちは':
+    case 'すらまっぱぎー':
+    case 'お休みぃぃぃぃ':
+    case 'にっこにっこにー':
+    case 'にゃんぱすー':
     const ary = ['にゃんぱすー','スラマッパギー','お休みぃぃいぃ','にっこにっこにー'];
-    replyText = ary[Math.floor(Math.random() * ary.length)];
-    
+    replyText = ary[Math.floor(Math.random() * ary.length)]; 
     return cliant.replyMessage(event.replyToken, {
       type: 'text',
       text: replyText
     });
-    }else{
-      return
-    }
+    break
   }
-
+}
+  
 app.listen(PORT);
